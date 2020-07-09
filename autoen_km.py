@@ -109,8 +109,10 @@ with tf.Session() as sess:
     centers = clf.cluster_centers_
     labels = clf.labels_
     silhouetteScore = silhouette_score(dd, labels, metric='euclidean')
+    davies_bouldinScore = davies_bouldin_score(dd, labels)
     print(centers)
     print(silhouetteScore)
+    print(davies_bouldinScore)
     # encode_decode = sess.run(
     #     y_pred, feed_dict={X: mnist.test.images[:examples_to_show]})
     # f, a = plt.subplots(2, 10, figsize=(10, 2))  #return fig，axes
